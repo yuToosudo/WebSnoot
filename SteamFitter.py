@@ -1,12 +1,12 @@
 # SteamFitter
 # @Bryspeelm
-# Description: 
+# Description: Ready for production
 # Goal: Identify extra pipes and what line they occur in a .tsv file.
 # Ver 1.0
 
 # Main Method
 def main():
-    numOfPipes = 23 # !!do not change unless number fields change!!
+    numOfPipes = 25 # !!do not change unless number fields change!!
     lineNum = 1 # start at one to take header into account
 
 #Find pipes out of range in community_users.tsv file
@@ -21,7 +21,7 @@ def main():
                     count+=1
             #print line that has too many pipes along with the number of pipes
             if count > numOfPipes:
-                print(count - numOfPipes), " extra pipes @ line ", lineNum 
+                print(count - numOfPipes), " extra pipes @ line ", lineNum
                 within(line) # call within function
             lineNum+=1 # move line counter to next line
     except IOError:
@@ -40,7 +40,7 @@ def within(ln):
             qtCt+=1
             if flag == 0:
                 flag = 1
-            else: 
+            else:
                 flag = 0
         if char == '|' and flag == 1 and qtCt % 2 != 0:
             print("Pipe in quotes at char #: ", charNum)
