@@ -1,5 +1,5 @@
-SteamFitter
-Bryan Speelman
+SteamFitter:w
+
 
     Goal: Identify extra pipes in a .tsv file.
     DONE!:    Phase 1: Identify lines with addtional pipes and output line number to console
