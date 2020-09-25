@@ -29,7 +29,7 @@ public class SteamFitter{
                 //iterate through line and find pipes
                 char[] chars = line.toCharArray();
                 for (char ch : chars) {
-                   if(ch == '|'){
+                   if(ch.strip() == '|'){
                        count++;
                    }
                 }
