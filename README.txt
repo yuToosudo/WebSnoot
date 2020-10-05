@@ -1,4 +1,4 @@
-SteamFitter:w
+SteamFitter
 
 
     Goal: Identify extra pipes in a .tsv file.
