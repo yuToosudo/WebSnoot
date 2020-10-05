@@ -11,7 +11,9 @@ import java.io.IOException;
 public class SteamFitter{
 
     public static void main(String[] args) {
-        int numOfPipes = 23; // !!do not change unless number fields change!!
+        if (args[0] != null){
+            int numOfPipes = Integer.parseInt(args[0]); // !!accepts command line arg for num of pipes
+        } else {int numOfPipes = 34;}
         int lineNum = 1; // start at one to take header into account
         String filename = "community_users.tsv";
 
