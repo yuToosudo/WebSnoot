@@ -7,11 +7,11 @@ import sys
 
 # Main Method
 def main():
-    if (sys.args[0] != null){
-      numOfPipes = sys.args[0]
-    } else {
-      numOfPipes = 25 
-    }
+    if (sys.args[0] != null and type(sys.args[0]) == int ):
+        numOfPipes = sys.args[0]
+    else:
+        numOfPipes = 25
+
     lineNum = 1 # start at one to take header into account
 
 #Find pipes out of range in community_users.tsv file
