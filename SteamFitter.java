@@ -11,9 +11,10 @@ import java.io.IOException;
 public class SteamFitter{
 
     public static void main(String[] args) {
-        if (args[0] != null){
-            int numOfPipes = Integer.parseInt(args[0]); // !!accepts command line arg for num of pipes
-        } else {int numOfPipes = 34;}
+        int numOfPipes;
+        if (args[0] != null && isNumeric(args[0])){
+           numOfPipes = Integer.parseInt(args[0]); // !!accepts command line arg for num of pipes
+        } else {numOfPipes = 34;}
         int lineNum = 1; // start at one to take header into account
         String filename = "community_users.tsv";
 
@@ -31,7 +32,7 @@ public class SteamFitter{
                 //iterate through line and find pipes
                 char[] chars = line.toCharArray();
                 for (char ch : chars) {
-                   if(ch.strip() == '|'){
+                   if(ch == '|'){
                        count++;
                    }
                 }
@@ -48,4 +49,13 @@ public class SteamFitter{
             System.out.println("Cannot find file");
         }
     }
+
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+  }
+}
 }
