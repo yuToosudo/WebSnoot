@@ -1,3 +1,4 @@
+import sys
 # SteamFitter
 # @Bryspeelm
 # Description: Ready for production
@@ -6,7 +7,11 @@
 
 # Main Method
 def main():
-    numOfPipes = 25 # !!do not change unless number fields change!!
+    if (sys.args[0] != null){
+      numOfPipes = sys.args[0]
+    } else {
+      numOfPipes = 25 
+    }
     lineNum = 1 # start at one to take header into account
 
 #Find pipes out of range in community_users.tsv file
