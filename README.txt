@@ -1,5 +1,10 @@
-SteamFitter
+WebSnoot: A helpful collection of tools for linting and sanitizing files for processing
 
+pdf2XML
+    Goal: Convert a pdf into a xml doc that can be indexed
+    Phase1: Injest PDF and tokenize
+    
+SteamFitter
 
     Goal: Identify extra pipes in a .tsv file.
     DONE!:    Phase 1: Identify lines with addtional pipes and output line number to console
@@ -25,3 +30,5 @@ SteamFitter
 
         Phase 6: Add flag that converts .tsv to .csv
         - '-c'
+        
+        
