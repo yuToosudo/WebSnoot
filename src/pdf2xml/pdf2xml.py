@@ -2,6 +2,8 @@ import sys
 from nltk.tokenize import RegexpTokenizer
 from pdfminer.high_level import extract_text
 from nltk.probability import FreqDist
+import lxml.etree
+import lxml.builder
 # pdf2xml 
 # @Bryspeelm
 # Description: TODO:s
@@ -32,3 +34,20 @@ print(freqdist)
 #
 long_frequent_words = [words for words in tokens if len(words) > 5 and freqdist[words] > 20]
 print(long_frequent_words)
+
+
+#TODO:
+E = lxml.builder.ElementMaker()
+ROOT = E.root
+DOC = E.doc
+FIELD1 = E.field1
+FIELD2 = E.field2
+
+the_doc = ROOT(
+        DOC(
+            FIELD1(tokens, name='tokens'),
+            FIELD2(text, name='text')
+            )   
+        )   
+print lxml.etree.tostring(the_doc, pretty_print=True)
+
