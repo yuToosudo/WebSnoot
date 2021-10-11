@@ -35,8 +35,7 @@ print(freqdist)
 long_frequent_words = [words for words in tokens if len(words) > 5 and freqdist[words] > 20]
 print(long_frequent_words)
 
-
-#TODO:
+#Make XML
 E = lxml.builder.ElementMaker()
 ROOT = E.root
 DOC = E.doc
@@ -51,3 +50,7 @@ the_doc = ROOT(
         )   
 print lxml.etree.tostring(the_doc, pretty_print=True)
 
+#Write XML
+f = open("mydoc.xml", "w")
+f.write(lxml.etree.tostring(the_doc, pretty_print=True)
+f.close()
